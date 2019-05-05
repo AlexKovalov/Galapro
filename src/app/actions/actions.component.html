@@ -1,0 +1,25 @@
+<div class="container">
+  <form class="form-group" [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp"
+             placeholder="Name" maxlength="15">
+
+      <label for="score">Score</label>
+      <div class="flex">
+        <input type="range" formControlName="score" class="form-control" id="score" oninput="ageOutputId.value = score.value">
+        <output name="ageOutputName" id="ageOutputId">{{scoreValue}}</output>
+      </div>
+
+
+      <label for="message">Message</label>
+      <textarea type="text" formControlName="message" class="form-control" id="message" placeholder="Type your message"
+                maxlength="500"></textarea>
+    </div>
+    <button type="submit" [disabled]="!messageForm.valid" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-primary" (click)="goToData()">Go to Data</button>
+  </form>
+</div>
+
+
+

@@ -1,0 +1,23 @@
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-group{
+  border: 1px solid lightgrey;
+  padding: 5px;
+}
+
+button{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+#ageOutputId{
+  margin-left: 10px;
+}

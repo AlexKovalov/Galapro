@@ -1,0 +1,26 @@
+table{
+  border: 1px solid lightgrey;
+}
+.data{
+  border-top: none;
+}
+.flex{
+  display: flex;
+}
+.tdFlex{
+  word-break: break-all;
+  width: 100%;
+  padding-right: 5px;
+  padding-left: 0px;
+}
+.tdBody{
+  padding-right: 0px;
+}
+.tdBody tbody{
+  display: block;
+}
+.borderRight{
+  border-right: 1px solid #dee2e6;
+}
+
+

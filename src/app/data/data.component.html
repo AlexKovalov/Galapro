@@ -1,0 +1,26 @@
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col" *ngFor="let title of titles">{{title}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr scope="col" *ngFor="let value of messages">
+      <td class="borderRight">{{value.name}}</td>
+      <td class="tdBody">
+    <tr *ngFor="let data of value.data; let idx = index" class="flex">
+      <td class="tdFlex" [ngClass]="{data: idx === 0}">{{data.message}}</td>
+    </tr>
+    </td>
+    <td >
+      <tr *ngFor="let data of value.data; let idx = index">
+        <td class="tdFlex" [ngClass]="{data: idx === 0}">{{data.score}}</td>
+      </tr>
+    </td>
+    </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" (click)="goToActions()">Go to Actions</button>
+  <button type="button" class="btn btn-primary" (click)="syncData()">Sync Data</button>
+</div>
