@@ -1,7 +1,7 @@
 import {Component, OnInit, Renderer2} from '@angular/core';
-import {forEach} from '@angular/router/src/utils/collection';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-actions',
@@ -18,9 +18,9 @@ export class ActionsComponent implements OnInit {
 
   ngOnInit() {
     this.messageForm = new FormGroup({
-      name: new FormControl('', Validators.required),
+      name: new FormControl('', [Validators.required]),
       score: new FormControl('50'),
-      message: new FormControl('', Validators.required)
+      message: new FormControl('', [Validators.required])
     });
 
     this.scoreValue = '50';
@@ -33,6 +33,8 @@ export class ActionsComponent implements OnInit {
 
     this.setDataToLocalStorage(messages, namePerson, data);
   }
+
+
 
   setDataToLocalStorage(messages: any[], name: string, data: any[]) {
     if (messages === null) {
@@ -50,13 +52,7 @@ export class ActionsComponent implements OnInit {
     localStorage.setItem('MESSAGES', JSON.stringify(messages));
 
     const r = this.messageForm.controls;
-    /*forEach(r, (value, key) => {
-      if (key === 'score') {
-        value.setValue('50');
-      } else {
-        value.setValue('');
-      }
-    });*/
+    this.messageForm.reset();
     this.scoreValue = '50';
     this.messageForm.get('score').setValue(50);
     this.renderer.selectRootElement('#ageOutputId').innerText = 50;
